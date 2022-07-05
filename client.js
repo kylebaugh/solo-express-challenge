@@ -12,7 +12,7 @@ const getPlanets = () => {
 }
 
 const getPeopleName = () => {
-    console.log('people name end hit')
+    console.log('people name front end hit')
     let myParam = 'name'
     axios.get(`http://localhost:4567/people/${myParam}`)
     .then(res => {
@@ -21,7 +21,7 @@ const getPeopleName = () => {
 }
 
 const getPeopleHeight = () => {
-    console.log('people height end hit')
+    console.log('people height front end hit')
     let myParam = 'height'
     axios.get(`http://localhost:4567/people/${myParam}`)
     .then(res => {
@@ -30,7 +30,7 @@ const getPeopleHeight = () => {
 }
 
 const getPeopleMass = () => {
-    console.log('people mass end hit')
+    console.log('people mass front end hit')
     let myParam = 'mass'
     axios.get(`http://localhost:4567/people/${myParam}`)
     .then(res => {

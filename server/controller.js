@@ -10,6 +10,7 @@ module.exports = {
         let myParam = sortBy
         let page = 0
         let nextValue = true
+        allPeople = []
 
         while(nextValue !== null){
             await axios.get(`https://swapi.dev/api/people`, {params: {page: ++page}})
@@ -46,6 +47,7 @@ module.exports = {
         }
 
         await res.status(200).send(sortedPeople)
+
     },
 
     getPlanets: async (req, res) => {
