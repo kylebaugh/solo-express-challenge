@@ -7,7 +7,7 @@ let sortedPeople = []
 module.exports = {
     getPeople: async (req, res) => {
         const {sortBy} = req.params
-        let myParam = +sortBy
+        let myParam = sortBy
         let page = 0
         let nextValue = true
 
@@ -18,9 +18,8 @@ module.exports = {
                     allPeople.push(...dbRes.data.results)
                 })}
         
-        if(myParam === 1){
-            // console.log(sortedPeople.length)
-            
+        if(myParam === 'name'){
+
             let sorting = allPeople.sort((a,b) => {
                 if(a.name < b.name){
                     return -1
@@ -31,23 +30,17 @@ module.exports = {
                 }
             })
             
-            sortedPeople = undefined
             sortedPeople = [...sorting]
             console.log(sortedPeople)
         
-        }else if(myParam === 2){
-            
+        }else if(myParam === 'height'){
             let sorting = allPeople.sort((a,b) => a.height - b.height) 
-            console.log(sorting)
-            sortedPeople = undefined
             sortedPeople = [...sorting]
             console.log(sortedPeople)
 
-        }else if(myParam === 3){
+        }else if(myParam === 'mass'){
             
             let sorting = allPeople.sort((a,b) => a.mass - b.mass)
-            console.log(sorting)
-            sortedPeople = undefined
             sortedPeople = [...sorting]
             console.log(sortedPeople)
         }
